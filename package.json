@@ -1,0 +1,15 @@
+{
+  "name": "wordpress-render-sqlite",
+  "version": "1.0.0",
+  "description": "WordPress on Render with SQLite - No empty directories",
+  "main": "index.php",
+  "scripts": {
+    "start": "php -S localhost:8000 -t . .htaccess-router.php",
+    "dev": "php -S localhost:8000 -t . .htaccess-router.php"
+  },
+  "engines": {
+    "php": ">=7.4"
+  },
+  "keywords": ["wordpress", "render", "sqlite", "php"],
+  "license": "GPL-2.0+"
+}
