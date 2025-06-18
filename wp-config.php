@@ -17,14 +17,14 @@ define('DB_DIR', ABSPATH . 'wp-content/database/');
 
 // ** Authentication Unique Keys and Salts ** //
 // Generate these at: https://api.wordpress.org/secret-key/1.1/salt/
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'QJ,3t-0(+08O@=yKUZub.VU;$|x*%E-blB/{62[,sw[C~mb>{.v}vNJIBo!jSJ+N');
+define('SECURE_AUTH_KEY',  't|-sK-:(V:ssb2&+C>Cc1  ll6ymb,t;p[~n;Pc=T+P/=Z<Uj0d(8!@TxXDZ`6=4');
+define('LOGGED_IN_KEY',    '*Dm#8cOODkb[}c#o- p|26=^=jtcm<<qaPp_e<y7#i&G-xHMXGj!7yJ+p]E6wKq|');
+define('NONCE_KEY',        '8,-8idlb BB_AD[xPp[d!OO}U=Do_IV3-sHxh?JyocA+%i++T]X|PEU&3TU7q#s5');
+define('AUTH_SALT',        '~E6Xt*: 64ptLIka<w`DH=j1o<]?Q/#)Jb3!:OUe2e t`k1K|feP#A|{olCXOK$_');
+define('SECURE_AUTH_SALT', 'u3qBqk;)(bQ|9-C-yRrB`b[A{07174$dZ<:R`5KaIpztc4NS)bZ>%2Kzd7[Jen W');
+define('LOGGED_IN_SALT',   '|NgxV&?]e,3vcw`V%+jLQ]R1770_l1a3%0!W]+Zym.`rOcn:0%q+PO/x}*jD=C9w');
+define('NONCE_SALT',       '`V!CtLUD*6CX*]wN`$>imm8@bz:`?)WCF*NrM$0|UEMUrX|wn -lI<(B<_!?5C=R');
 
 // ** WordPress Database Table prefix ** //
 $table_prefix = 'wp_';
