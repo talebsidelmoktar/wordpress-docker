@@ -1,0 +1,37 @@
+# WordPress core files (downloaded during build)
+/wp-admin/
+/wp-includes/
+wp-*.php
+!wp-config.php
+xmlrpc.php
+license.txt
+readme.html
+wp-config-sample.php
+
+# Runtime generated directories and files
+wp-content/uploads/
+wp-content/database/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/upgrade/
+
+# WordPress plugins (except custom ones)
+wp-content/plugins/
+!wp-content/plugins/.gitkeep-custom
+
+# WordPress themes (except custom ones)  
+wp-content/themes/
+!wp-content/themes/.gitkeep-custom
+
+# System and temporary files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.env
+.env.local
+
+# Development files
+node_modules/
+*.zip
+*.tar.gz
