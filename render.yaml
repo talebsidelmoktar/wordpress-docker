@@ -1,0 +1,58 @@
+services:
+  - type: web
+    name: wordpress-site
+    env: php
+    plan: starter
+    buildCommand: |
+      echo "Starting WordPress build process..."
+      
+      # Download and extract WordPress
+      echo "Downloading WordPress..."
+      curl -O https://wordpress.org/latest.tar.gz
+      tar -xzf latest.tar.gz --strip-components=1
+      rm latest.tar.gz
+      
+      # Create all necessary WordPress directories
+      echo "Creating WordPress directory structure..."
+      mkdir -p wp-content/database
+      mkdir -p wp-content/uploads
+      mkdir -p wp-content/themes
+      mkdir -p wp-content/plugins
+      mkdir -p wp-content/mu-plugins
+      mkdir -p wp-content/languages
+      mkdir -p wp-content/cache
+      mkdir -p wp-content/backups
+      
+      # Download and install SQLite Integration plugin
+      echo "Installing SQLite Database Integration plugin..."
+      cd wp-content/plugins
+      curl -L -o sqlite-integration.zip https://downloads.wordpress.org/plugin/sqlite-database-integration.2.1.5.zip
+      unzip sqlite-integration.zip
+      rm sqlite-integration.zip
+      cd ../..
+      
+      # Create database security files
+      echo "Setting up database security..."
+      echo "deny from all" > wp-content/database/.htaccess
+      echo "# SQLite database directory" > wp-content/database/index.php
+      echo "<?php // Silence is golden" >> wp-content/database/index.php
+      
+      # Create uploads security
+      echo "# Uploads directory" > wp-content/uploads/index.php
+      echo "<?php // Silence is golden" >> wp-content/uploads/index.php
+      
+      # Set proper permissions
+      echo "Setting file permissions..."
+      find . -type d -exec chmod 755 {} \;
+      find . -type f -exec chmod 644 {} \;
+      chmod 600 wp-config.php 2>/dev/null || true
+      
+      echo "Build process completed successfully!"
+      
+    startCommand: php -S 0.0.0.0:$PORT -t . .htaccess-router.php
+    
+    envVars:
+      - key: WP_ENV
+        value: production
+      - key: WP_DEBUG
+        value: false
